@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
     // register our function as the "callback" to be triggered by the form's submission event
     $("#form-gif-request").submit(fetchAndDisplayGif); // in other words, when the form is submitted, fetchAndDisplayGif() will be executed
@@ -18,6 +16,10 @@ function fetchAndDisplayGif(event) {
     // Because we will be making our own AJAX request, we dont need to send a normal request and we definitely don't want the page to refresh.
     event.preventDefault();
     
+    //validate input for captcha
+    if($("#captcha").val() == 5) {
+
+
     // get the user's input text from the DOM
     var searchQuery = $("#tag").val(); //done// TODO should be e.g. "dance"
 
@@ -57,8 +59,11 @@ function fetchAndDisplayGif(event) {
     //done // give the user a "Loading..." message while they wait
     setGifLoadedStatus(false);
     $("#feedback").text("Just a second...");
+} else {
+     $("#feedback").text("Sorry, no gifs for robots.");
+     setGifLoadedStatus(false);
+};
 }
-
 
 /**
  * toggles the visibility of UI elements based on whether a GIF is currently loaded.
