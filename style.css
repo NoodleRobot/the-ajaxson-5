@@ -1,0 +1,21 @@
+body {
+    background-color: #E98B50;
+    text-align: center;
+    padding: 25px;
+    font-family: Verdana;
+}
+
+.main_body {
+    background-color: #FEF2A0;
+}
+
+#form {
+    border: 1px solid #BC4F4F;
+    border-radius: 3px;
+    margin: auto;
+    background-color: #F3CD97;
+}
+
+#gif {
+    border: 5px double #BC4F4F; 
+}
